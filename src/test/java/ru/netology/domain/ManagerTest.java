@@ -4,6 +4,7 @@ package ru.netology.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.netology.manager.Manager;
 import ru.netology.repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -26,14 +27,6 @@ public class ManagerTest {
     }
 
 
-    @Test
-    public void shouldSearchByName() {
-
-        Product[] actual = manager.searchBy("Book");
-        Product[] expected = new Product[]{one, two};
-        assertArrayEquals(actual, expected);
-
-    }
 
     @Test
     public void shouldSearchByBrand() {
@@ -57,5 +50,13 @@ public class ManagerTest {
         Product[] actual = manager.searchBy("5");
         Product[] expected = new Product[]{};
         assertArrayEquals(actual, expected);
+    }
+    @Test
+    public void shouldSearchByName() {
+
+        Product[] actual = manager.searchBy("Book");
+        Product[] expected = new Product[]{one, two};
+        assertArrayEquals(actual, expected);
+
     }
 }
