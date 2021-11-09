@@ -51,6 +51,7 @@ public class ManagerTest {
         Product[] expected = new Product[]{};
         assertArrayEquals(actual, expected);
     }
+
     @Test
     public void shouldSearchByName() {
 
